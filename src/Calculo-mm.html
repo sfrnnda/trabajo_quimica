@@ -23,7 +23,31 @@
             <div class="btn-calculo">
                 <button type="submit" id="Calcular" >Calcular</button>
             </div>
+            <div class="result">
+                <p>El resultado es : </p>
+                <p id="resultado"></p>
+            </div>
         </div>
     </div>
+    <script>
+
+        //import masaVolumen from 'formulas.js';
+
+        let botonCalcular = document.getElementById('Calcular');
+
+        botonCalcular.onclick = ()=>{
+            
+            let gSoluto = document.getElementById('gSoluto').value;
+            let gSolucion = document.getElementById('gSolucion').value;
+
+            let resultado = (gSoluto/gSolucion)*100;
+
+            let mensaje = document.getElementById('resultado').innerHTML = resultado;
+
+        }
+
+
+
+    </script>
 </body>
 </html>
