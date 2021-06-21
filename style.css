@@ -1,0 +1,39 @@
+*{
+    margin : 0 ;
+    padding : 0;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+.lista-botones{
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    color: #0A9DFF;
+}
+.boton button{
+    background-color: whitesmoke;
+    color: #0A9DFF;
+    border-radius: 15px;
+    border: solid 2px #0A9DFF;
+    padding: 15px;
+    margin: 10px;
+    width: 20em;
+
+}
+
+
+
+.boton button:hover{
+    transition: .3s;
+    background-color: #0A9DFF;
+    color : whitesmoke;
+}
+

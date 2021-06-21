@@ -5,12 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quimica</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h3>
-            titulo!!
-        </h3>
+        <!--Titulo de la pagina-->
+        <div class="titulo">
+            <h4>Unidades de concentración</h4>
+        </div>
+        <div class="botones">
+            <div class="lista-botones">
+                <div class="boton">
+                    <button id="masa-masa">
+                        Calculo %m/m
+                    </button>
+                </div>
+                <div class="boton">
+                    <button id="masa-volumen">
+                        Calculo %m/v
+                    </button>
+                </div>
+                <div class="boton">
+                    <button id="volumen-volumen">
+                        Calculo %v/v
+                    </button>
+                </div>
+                <div class="boton">
+                    <button id="partes-millon">
+                        Calculo ppm
+                    </button>
+                </div>
+                <div class="boton">
+                    <button id="moralidad">
+                        Calculo M
+                    </button>
+                </div>
+                <div class="boton">
+                    <button id="normalidad">
+                        Calculo N
+                    </button>
+                </div>
+                <div class="boton">
+                    <button id="fraccion-molar">
+                        Calculo X
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
+    <!--
+         redirecciones de pagina web
+    -->
+    <script>
+
+        let btnMasaMasa = document.getElementById("masa-masa");
+
+        //funcion redireccionar pagina calculo masa masa
+        btnMasaMasa.addEventListener('click',function(){
+            window.location.href = "src/Calculo-mm.html";
+        });
+
+
+    </script>
 </body>
 </html>
