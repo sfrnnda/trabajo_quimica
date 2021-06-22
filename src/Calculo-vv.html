@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculo porcentaje masa volumen</title>
+    <title>Calculadora porcentaje volumen volumen</title>
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de porcentaje masa volumen</h1>
+        <h1>Calculadora de porcentaje volumen volumen</h1>
         <div class="calculos">
             <div class="inputs">
-                <p>Ingrese gramos de soluto</p>
-                <input type="text" id="gSoluto">
+                <p>Ingrese milimetros de soluto</p>
+                <input type="text" id="mmSoluto">
             </div>
             <div class="inputs">
                 <p>Ingrese milimetros de solucion</p>
@@ -24,19 +24,18 @@
         </div>
     </div>
     <script>
+         
         let botonCalcular = document.getElementById('Calcular');
-        botonCalcular.onclick=()=>{
-            let gSoluto = document.getElementById('gSoluto').value;
-            let mmSolucion =document.getElementById('mmSolucion').value;
-            
-            let resultado = (gSoluto/mmSolucion)*100;
+
+        botonCalcular.onclick = ()=>{
+            let gSoluto = document.getElementById('mmSoluto').value;
+            let gSolucion = document.getElementById('mmSolucion').value;
+
+            let resultado = (mmSoluto/mmSolucion)*100
+
             let mensaje = document.getElementById('resultado').innerHTML = resultado;
+
         }
-        
     </script>
-
-    
-
-
 </body>
 </html>
