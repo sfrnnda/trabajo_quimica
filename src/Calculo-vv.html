@@ -12,11 +12,11 @@
         <div class="calculos">
             <div class="inputs">
                 <p>Ingrese milimetros de soluto</p>
-                <input type="text" id="mmSoluto">
+                <input type="text" id="mSoluto">
             </div>
             <div class="inputs">
                 <p>Ingrese milimetros de solucion</p>
-                <input type="text" id="mmSolucion">
+                <input type="text" id="mSolucion">
             </div>
             <div class="btn-calculo">
                 <button type="submit" id="Calcular">Calcular</button>
@@ -32,11 +32,10 @@
         let botonCalcular = document.getElementById('Calcular');
 
         botonCalcular.onclick = ()=>{
-            let gSoluto = document.getElementById('mmSoluto').value;
-            let gSolucion = document.getElementById('mmSolucion').value;
+            let mSoluto = document.getElementById('mSoluto').value;
+            let mSolucion = document.getElementById('mSolucion').value;
 
-            let resultado = (mmSoluto/mmSolucion)*100
-
+            let resultado = (mSoluto/mSolucion)*100
             let mensaje = document.getElementById('resultado').innerHTML = resultado;
 
         }
