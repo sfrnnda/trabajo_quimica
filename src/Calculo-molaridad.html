@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculadora de molaridad</title>
+    <link rel="stylesheet" href="./estilos/calculos.css">
 </head>
 <body>
     <div class="container">
-        <div class="titulo">
-            <h1>Calculadora de molaridad</h1>
-        </div>
+        <header>
+            <div class="icono-back">
+                <img src="./img/back.png" alt="" id="back"> 
+            </div>
+            <h1>Calculadora de porcentaje moralidad</h1>
+        </header>
         <div class="calculos">
             <div class="inputs">
                 <p>Ingrese moles de de soluto</p>
@@ -34,6 +38,14 @@
         //import masaMasa from 'formulas.js';
 
         let botonCalcular = document.getElementById('Calcular');
+        let volver = document.getElementById('back');
+
+        function validar(a,b){
+            if(a<0 && b<0){
+                return false;
+            }
+            return true;
+        }
 
         botonCalcular.onclick = ()=>{
             
@@ -46,7 +58,9 @@
 
         }
 
-
+        volver.onclick = ()=>{
+            window.location.href = '/';
+        }
 
     </script>
     

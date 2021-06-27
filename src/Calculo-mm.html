@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculo Masa Masa</title>
+    <link rel="stylesheet" href="./estilos/calculos.css">
 </head>
 <body>
     <div class="container">
-        <div class="titulo">
+        <header>
+            <div class="icono-back">
+                <img src="./img/back.png" alt="" id="back"> 
+            </div>
             <h1>Calculadora de porcentaje masa masa</h1>
-        </div>
+        </header>
         <div class="calculos">
             <div class="inputs">
                 <p>Ingrese gramos de soluto</p>
@@ -34,18 +38,33 @@
         //import masaMasa from 'formulas.js';
 
         let botonCalcular = document.getElementById('Calcular');
+        let volver = document.getElementById('back');
+
+        function validar(a,b){
+            if(a<0 && b<0){
+                return false;
+            }
+            return true;
+        }
+
 
         botonCalcular.onclick = ()=>{
             
             let gSoluto = document.getElementById('gSoluto').value;
             let gSolucion = document.getElementById('gSolucion').value;
 
+           if(validar(gSoluto,gSolucion)){
             let resultado = (gSoluto/gSolucion)*100;
-
             let mensaje = document.getElementById('resultado').innerHTML = resultado;
+           }else{
+               alert('Ingrese datos mayores a 0');
+           }
 
         }
 
+        volver.onclick = ()=>{
+            window.location.href = '/';
+        }
 
 
     </script>

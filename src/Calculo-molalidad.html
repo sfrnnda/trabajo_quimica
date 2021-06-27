@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de molalidad</title>
+    <link rel="stylesheet" href="./estilos/calculos.css">
 </head>
 <body>
     <div class="container">
-        <div class="titulo">
-            <h1>Calculadora de molalidad</h1>
-        </div>
+        <header>
+            <div class="icono-back">
+                <img src="./img/back.png" alt="" id="back"> 
+            </div>
+            <h1>Calculadora de porcentaje molalidad</h1>
+        </header>
         <div class="calculos">
             <div class="inputs">
                 <p>Ingrese moles de soluto</p>
@@ -34,18 +38,30 @@
 
 
         let botonCalcular = document.getElementById('Calcular');
+        let volver = document.getElementById('back');
+
+        function validar(a,b){
+            if(a<0 && b<0){
+                return false;
+            }
+            return true;
+        }
 
         botonCalcular.onclick = ()=>{
             
             let molSoluto = document.getElementById('molSoluto').value;
             let kgSolvente = document.getElementById('kgSolvente').value;
 
-            let resultado = (molSoluto/kgSolvente);
-
-            let mensaje = document.getElementById('resultado').innerHTML = resultado;
-
+            if(validar(molSoluto,kgSolvente)){
+                let resultado = (molSoluto/kgSolvente);
+                let mensaje = document.getElementById('resultado').innerHTML = resultado;
+            }else{
+                alert('Ingrese datos mayores a 0');
+            }
         }
-
+        volver.onclick = ()=>{
+            window.location.href = '/';
+        }
 
 
     </script>

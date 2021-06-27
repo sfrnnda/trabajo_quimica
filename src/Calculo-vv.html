@@ -5,10 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora porcentaje volumen volumen</title>
+    <link rel="stylesheet" href="./estilos/calculos.css">
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de porcentaje volumen volumen</h1>
+        <header>
+            <div class="icono-back">
+                <img src="./img/back.png" alt="" id="back"> 
+            </div>
+            <h1>Calculadora de porcentaje volumen volumen</h1>
+        </header>
         <div class="calculos">
             <div class="inputs">
                 <p>Ingrese milimetros de soluto</p>
@@ -30,15 +36,35 @@
     <script>
          
         let botonCalcular = document.getElementById('Calcular');
+        let volver = document.getElementById('back');
+
+        function validar(a,b){
+
+            if(a<0 && b<0){
+                return false;
+            }
+            return true;
+        }
 
         botonCalcular.onclick = ()=>{
             let mSoluto = document.getElementById('mSoluto').value;
             let mSolucion = document.getElementById('mSolucion').value;
 
-            let resultado = (mSoluto/mSolucion)*100
-            let mensaje = document.getElementById('resultado').innerHTML = resultado;
+            if(validar(mSoluto,mSolucion)){
+                let resultado = (mSoluto/mSolucion)*100
+                let mensaje = document.getElementById('resultado').innerHTML = resultado;
+            }else{
+                alert('Ingrese numeros mayores a 0');
+
+            }
 
         }
+
+        volver.onclick = ()=>{
+            window.location.href = '/';
+        }
+
+
     </script>
 </body>
 </html>

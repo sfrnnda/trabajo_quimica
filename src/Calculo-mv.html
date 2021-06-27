@@ -5,10 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculo porcentaje masa volumen</title>
+    <link rel="stylesheet" href="./estilos/calculos.css">
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de porcentaje masa volumen</h1>
+        <header>
+            <div class="icono-back">
+                <img src="./img/back.png" alt="" id="back"> 
+            </div>
+            <h1>Calculadora de porcentaje masa volumen</h1>
+        </header>
         <div class="calculos">
             <div class="inputs">
                 <p>Ingrese gramos de soluto</p>
@@ -29,14 +35,28 @@
     </div>
     <script>
         let botonCalcular = document.getElementById('Calcular');
+        let volver = document.getElementById('back');
+
+        function validar(a,b){
+            if(a<0 && b<0){
+                return false;
+            }
+            return true;
+        }
         botonCalcular.onclick=()=>{
             let gSoluto = document.getElementById('gSoluto').value;
             let mgSolucion =document.getElementById('mgSolucion').value;
             
-            let resultado = (gSoluto/mgSolucion)*100;
-            let mensaje = document.getElementById('resultado').innerHTML = resultado;
+            if(validar(gSoluto,mgSolucion)){
+                let resultado = (gSoluto/mgSolucion)*100;
+                let mensaje = document.getElementById('resultado').innerHTML = resultado;
+            }else{
+                alert('Ingrese datos mayores a 0');
+            }
         }
-        
+        volver.onclick = ()=>{
+            window.location.href = '/';
+        }
     </script>
 
     
