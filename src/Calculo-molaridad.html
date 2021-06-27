@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculo porcentaje masa volumen</title>
+    <title>calculadora de molaridad</title>
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de porcentaje masa volumen</h1>
+        <div class="titulo">
+            <h1>Calculadora de molaridad</h1>
+        </div>
         <div class="calculos">
             <div class="inputs">
-                <p>Ingrese gramos de soluto</p>
-                <input type="text" id="gSoluto">
+                <p>Ingrese moles de de soluto</p>
+                <input type="text" id="molSoluto">
             </div>
             <div class="inputs">
-                <p>Ingrese miligramos de solucion</p>
-                <input type="text" id="mgSolucion">
+                <p>Ingrese litros de solucion</p>
+                <input type="text" id="lSolucion">
             </div>
             <div class="btn-calculo">
-                <button type="submit" id="Calcular">Calcular</button>
+                <button type="submit" id="Calcular" >Calcular</button>
             </div>
             <div class="result">
                 <p>El resultado es : </p>
@@ -28,19 +30,25 @@
         </div>
     </div>
     <script>
+
+        //import masaMasa from 'formulas.js';
+
         let botonCalcular = document.getElementById('Calcular');
-        botonCalcular.onclick=()=>{
-            let gSoluto = document.getElementById('gSoluto').value;
-            let mgSolucion =document.getElementById('mgSolucion').value;
+
+        botonCalcular.onclick = ()=>{
             
-            let resultado = (gSoluto/mgSolucion)*100;
+            let molSoluto = document.getElementById('molSoluto').value;
+            let lSolucion = document.getElementById('lSolucion').value;
+
+            let resultado = (molSoluto/lSolucion);
+
             let mensaje = document.getElementById('resultado').innerHTML = resultado;
+
         }
-        
+
+
+
     </script>
-
     
-
-
 </body>
 </html>

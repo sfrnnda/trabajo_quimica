@@ -41,6 +41,11 @@
                     </button>
                 </div>
                 <div class="boton">
+                    <button id="moladidad">
+                        Calculo m
+                    </button>
+                </div>
+                <div class="boton">
                     <button id="normalidad">
                         Calculo N
                     </button>
@@ -62,7 +67,13 @@
         
         let btnMasaVolumen = document.getElementById('masa-volumen');
 
-        let btnVolumenVolumen =document.getElementById('volumen-volumen')
+        let btnVolumenVolumen =document.getElementById('volumen-volumen');
+
+        let btnPartesMillon = document.getElementById("partes-millon");
+
+        let btnMolaridad = document.getElementById("moralidad");
+
+        let btnMolalidad = document.getElementById("moladidad");
 
         //funcion redireccionar pagina calculo masa masa
         btnMasaMasa.addEventListener('click',function(){
@@ -78,7 +89,21 @@
 
         });
 
+        btnPartesMillon.addEventListener('click',function(){
+            window.location.href ="src/Calculo-ppm.html";
+
+        });
+
+        btnMolaridad.addEventListener('click',function(){
+            window.location.href ="src/Calculo-molaridad.html";
+
+        });
+
+        btnMolalidad.addEventListener('click',function(){
+            window.location.href = "src/Calculo-molalidad.html";
+        });
+
     </script> 
-    <!--yo realice un cambio-->
+
 </body>
 </html>
