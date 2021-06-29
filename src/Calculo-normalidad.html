@@ -5,8 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculo normalidad</title>
+    <link rel="stylesheet" href="./estilos/calculos.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <div class="icono-back">
+                <img src="./img/back.png" alt="" id="back"> 
+            </div>
+            <h1>Calculadora de normalidad</h1>
+        </header>
+        <div class="calculos">
+            <div class="inputs">
+                <p>Ingrese eqivalentes</p>
+                <input type="text" id="equiv">
+            </div>
+            <div class="inputs">
+                <p>Ingrese molaridad</p>
+                <input type="text" id="molaridad">
+            </div>
+            <div class="btn-calculo">
+                <button type="submit" id="Calcular">Calcular</button>
+            </div>
+            <div class="result">
+                <p>El resultado es : </p>
+                <p id="resultado"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let botonCalcular = document.getElementById('Calcular');
+        let volver = document.getElementById('back');
+
+        function validar(a,b){
+            if(a<0 && b<0){
+                return false;
+            }
+            return true;
+        }
+        botonCalcular.onclick=()=>{
+            let equiv = document.getElementById('equiv').value;
+            let molaridad =document.getElementById('molaridad').value;
+            
+            if(validar(equiv,molaridad)){
+                let resultado = (equiv*molaridad)
+                let mensaje = document.getElementById('resultado').innerHTML = resultado;
+            }else{
+                alert('Ingrese datos mayores a 0');
+            }
+        }
+        volver.onclick = ()=>{
+            window.location.href = '/';
+        }
+    </script>
  
     
 </body>

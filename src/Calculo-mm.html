@@ -25,7 +25,7 @@
                 <input type="text" id="gSolucion">
             </div>
             <div class="btn-calculo">
-                <button type="submit" id="Calcular" >Calcular</button>
+                <button type="submit" id="Calcular">Calcular</button>
             </div>
             <div class="result">
                 <p>El resultado es : </p>
@@ -34,9 +34,6 @@
         </div>
     </div>
     <script>
-
-
-
         let botonCalcular = document.getElementById('Calcular');
         let volver = document.getElementById('back');
 
@@ -46,27 +43,21 @@
             }
             return true;
         }
-
-
-        botonCalcular.onclick = ()=>{
-            
+        botonCalcular.onclick=()=>{
             let gSoluto = document.getElementById('gSoluto').value;
-            let gSolucion = document.getElementById('gSolucion').value;
-
-           if(validar(gSoluto,gSolucion)){
-            let resultado = (gSoluto/gSolucion)*100;
-            let mensaje = document.getElementById('resultado').innerHTML = resultado;
-           }else{
-               alert('Ingrese datos mayores a 0');
-           }
-
+            let gSolucion =document.getElementById('gSolucion').value;
+            
+            if(validar(gSoluto,gSolucion)){
+                let resultado = (gSoluto/gSolucion)*100;
+                let mensaje = document.getElementById('resultado').innerHTML = resultado;
+            }else{
+                alert('Ingrese datos mayores a 0');
+            }
         }
-
         volver.onclick = ()=>{
             window.location.href = '/';
         }
-
-
     </script>
+
 </body>
 </html>
