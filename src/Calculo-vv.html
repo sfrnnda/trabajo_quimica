@@ -15,13 +15,16 @@
             </div>
             <h1>Calculadora de porcentaje volumen volumen</h1>
         </header>
+        <div class="formula" style="text-align: center;">
+            <img src="./img/volumenvolumen.svg" alt="">
+        </div>
         <div class="calculos">
             <div class="inputs">
                 <p>Ingrese miligramos de soluto</p>
                 <input type="text" id="mSoluto">
             </div>
             <div class="inputs">
-                <p>Ingrese miligramos de solucion</p>
+                <p>Ingrese mililitros de solucion</p>
                 <input type="text" id="mSolucion">
             </div>
             <div class="btn-calculo">
@@ -51,7 +54,8 @@
             let mSolucion = document.getElementById('mSolucion').value;
 
             if(validar(mSoluto,mSolucion)){
-                let resultado = (mSoluto/mSolucion)*100
+                let formula = (mSoluto/mSolucion)*100
+                let resultado = formula.toString()+"%";
                 let mensaje = document.getElementById('resultado').innerHTML = resultado;
             }else{
                 alert('Ingrese numeros mayores a 0');
@@ -61,7 +65,7 @@
         }
 
         volver.onclick = ()=>{
-            window.location.href = '/';
+            window.location.href = '../index.html';
         }
 
 

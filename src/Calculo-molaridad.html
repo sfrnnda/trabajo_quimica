@@ -15,6 +15,9 @@
             </div>
             <h1>Calculadora de porcentaje moralidad</h1>
         </header>
+        <div class="formula" style="text-align: center;">
+            <img src="./img/molaridad.svg" alt="">
+        </div>
         <div class="calculos">
             <div class="inputs">
                 <p>Ingrese moles de de soluto</p>
@@ -52,14 +55,17 @@
             let molSoluto = document.getElementById('molSoluto').value;
             let lSolucion = document.getElementById('lSolucion').value;
 
-            let resultado = (molSoluto/lSolucion);
+            if(validar(molSoluto,lSolucion)){
+                let resultado = (molSoluto/lSolucion);
+                let mensaje = document.getElementById('resultado').innerHTML = resultado;
 
-            let mensaje = document.getElementById('resultado').innerHTML = resultado;
-
+            }else{
+                alert('Ingrese datos a mayores ')
+            }
         }
 
         volver.onclick = ()=>{
-            window.location.href = '/';
+            window.location.href = '../index.html';
         }
 
     </script>

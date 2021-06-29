@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculo Masa Masa</title>
     <link rel="stylesheet" href="./estilos/calculos.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 </head>
 <body>
     <div class="container">
@@ -15,6 +16,9 @@
             </div>
             <h1>Calculadora de porcentaje masa masa</h1>
         </header>
+        <div class="formula" style="text-align: center;">
+            <img src="./img/masamasa.svg" alt="">
+        </div>
         <div class="calculos">
             <div class="inputs">
                 <p>Ingrese gramos de soluto</p>
@@ -48,14 +52,15 @@
             let gSolucion =document.getElementById('gSolucion').value;
             
             if(validar(gSoluto,gSolucion)){
-                let resultado = (gSoluto/gSolucion)*100;
+                let formula = (gSoluto/gSolucion)*100;
+                let resultado = formula.toString()+"%";
                 let mensaje = document.getElementById('resultado').innerHTML = resultado;
             }else{
                 alert('Ingrese datos mayores a 0');
             }
         }
         volver.onclick = ()=>{
-            window.location.href = '/';
+            window.location.href = '../index.html';
         }
     </script>
 
