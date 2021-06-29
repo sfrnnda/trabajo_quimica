@@ -14,19 +14,22 @@
             <div class="icono-back">
                 <img src="./img/back.png" alt="" id="back"> 
             </div>
-            <h1>Calculadora de normalidad</h1>
+            <h1>Calculadora de fraccion molar</h1>
         </header>
+        <div class="formula" style="text-align: center;">
+            <img src="./img/fraccionMolar.svg" alt="">
+        </div>
         <div class="calculos">
             <div class="inputs">
-                <p>Ingrese eqivalentes</p>
-                <input type="text" id="equiv">
+                <p>Ingrese moles de xi</p>
+                <input type="text" id="moli">
             </div>
             <div class="inputs">
-                <p>Ingrese molaridad</p>
-                <input type="text" id="molaridad">
+                <p>Ingrese moles totales</p>
+                <input type="text" id="molt">
             </div>
             <div class="btn-calculo">
-                <button type="submit" id="Calcular">Calcular</button>
+                <button type="submit" id="Calcular" >Calcular</button>
             </div>
             <div class="result">
                 <p>El resultado es : </p>
@@ -35,6 +38,9 @@
         </div>
     </div>
     <script>
+
+        //import masaMasa from 'formulas.js';
+
         let botonCalcular = document.getElementById('Calcular');
         let volver = document.getElementById('back');
 
@@ -43,22 +49,28 @@
                 return false;
             }
             return true;
-        }
-        botonCalcular.onclick=()=>{
-            let equiv = document.getElementById('equiv').value;
-            let molaridad =document.getElementById('molaridad').value;
+        }        
+
+        botonCalcular.onclick = ()=>{
             
-            if(validar(equiv,molaridad)){
-                let resultado = (equiv*molaridad)
+            let moli = document.getElementById('moli').value;
+            let molt = document.getElementById('molt').value;
+
+            if(validar(moli,molt)){
+                let formula = (moli/molt)*100;
+                let resultado = formula.toString()+"%";
                 let mensaje = document.getElementById('resultado').innerHTML = resultado;
             }else{
-                alert('Ingrese datos mayores a 0');
+                alert('Ingrese datos mayores a 0 ');
             }
+
         }
+
         volver.onclick = ()=>{
             window.location.href = '../index.html';
         }
+
     </script>
-    
+    </script>
 </body>
 </html>
